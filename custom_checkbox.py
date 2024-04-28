@@ -66,23 +66,19 @@ class CustomCheckBox(UserControl):
       ])
 
   def checked_check(self,e):
-    print(self.checked)
     if self.checked == False:
         self.checked = True
         self.check_box.border = None
         self.check_box.bgcolor = self.CHECKED
         self.check_box.content = Icon(icons.CHECK_ROUNDED,size=15,)
-        self.update()
-
-        
-    elif self.checked == True:
+    else:
         self.checked = False
         self.check_box.bgcolor = None
         self.check_box.border = border.all(color=self.color,width=self.stroke_width)
         self.check_box.content.visible = False
-        self.update()
-        
 
+    self.update()
+        
     if self.pressed:
       self.run()       
   def is_checked(self):
